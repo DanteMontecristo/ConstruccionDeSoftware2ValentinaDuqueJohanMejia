@@ -1,2 +1,7 @@
 # ConstruccionDeSoftware2ValentinaDuqueJohanMejia
-Construcción de Software 2, Valentina Duque Cifuentes y Johan Alexander Mejía Tamayo, Visual Studio Code (Java)
+
+Valentina Duque Cifuentes (lunes, miercoles 4 - 6)
+
+Johan Alexander Mejía Tamayo (lunes, miercoles 4 - 6)
+
+Visual Studio Code (Java)
