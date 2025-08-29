@@ -1,35 +1,118 @@
 package APP.domain.model;
 
-import java.security.cert.CertPathValidatorException.Reason;
 import java.sql.Date;
-import javax.management.relation.Role;
 
-import APP.domain.model.enums.ReasonsForConsultation;
-
-//Expediente medico
 public class ClinicalRecord {
-    private Date date;
-	private long doctorDocument;
-    private ReasonsForConsultation reasonForConsultation;
-    private String symptomatology;
-    private String diagnostic;
 
-    public String getPatient() {
-        throw new UnsupportedOperationException();
+    private long document;
+	private Patient patientName;
+	private User doctorName;
+	private Date date;
+	private String motive;
+	private String Diagnosis;
+	private String medicine;
+	private String medicalProcedure;
+	private String doce;
+	private ClinicalOrder clinicalOrder; 
+	private String vaccinationRecord;
+	private String allergies;
+	private String proceddureDetail;
+	private String symptoms;
+	private boolean status;
+
+    public long getDocument() {
+        return document;
     }
-    public Object getClinicalOrder() {
-        throw new UnsupportedOperationException();
+    public void setDocument(long document) {
+        this.document = document;
+    }
+    public Patient getPatientName() {
+        return patientName;
+    }
+    public void setPatientName(Patient patientName) {
+        this.patientName = patientName;
     }
     public User getDoctorName() {
-        throw new UnsupportedOperationException();
+        return doctorName;
     }
-    public void setPatient(Patient patient) {
-        throw new UnsupportedOperationException();
+    public void setDoctorName(User doctorName) {
+        this.doctorName = doctorName;
     }
-    public void setDoctorName(User doctor) {
-        throw new UnsupportedOperationException();
+    public Date getDate() {
+        return date;
+    }
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    public String getMotive() {
+        return motive;
+    }
+    public void setMotive(String motive) {
+        this.motive = motive;
+    }
+    public String getDiagnosis() {
+        return Diagnosis;
+    }
+    public void setDiagnosis(String diagnosis) {
+        Diagnosis = diagnosis;
+    }
+    public String getMedicine() {
+        return medicine;
+    }
+    public void setMedicine(String medicine) {
+        this.medicine = medicine;
+    }
+    public String getMedicalProcedure() {
+        return medicalProcedure;
+    }
+    public void setMedicalProcedure(String medicalProcedure) {
+        this.medicalProcedure = medicalProcedure;
+    }
+    public String getDoce() {
+        return doce;
+    }
+    public void setDoce(String doce) {
+        this.doce = doce;
+    }
+    public ClinicalOrder getClinicalOrder() {
+        return clinicalOrder;
     }
     public void setClinicalOrder(ClinicalOrder clinicalOrder) {
-        throw new UnsupportedOperationException();
+        this.clinicalOrder = clinicalOrder;
     }
+    public String getVaccinationRecord() {
+        return vaccinationRecord;
+    }
+    public void setVaccinationRecord(String vaccinationRecord) {
+        this.vaccinationRecord = vaccinationRecord;
+    }
+    public String getAllergies() {
+        return allergies;
+    }
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+    public String getProceddureDetail() {
+        return proceddureDetail;
+    }
+    public void setProceddureDetail(String proceddureDetail) {
+        this.proceddureDetail = proceddureDetail;
+    }
+    public String getSymptoms() {
+        return symptoms;
+    }
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
+    }
+    public boolean isStatus() {
+        return status;
+    }
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    public static ClinicalOrder getclinicalOrder() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getclinicalOrder'");
+    }
+
 }

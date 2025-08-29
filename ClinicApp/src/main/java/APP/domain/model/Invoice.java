@@ -1,28 +1,29 @@
 package APP.domain.model;
 
-import java.sql.Date;
-
 public class Invoice {
-    private String patientName;
-    private int age;
-    private long document;
-	private String doctorName;
-	private String insuranceCompany;
-    private int policyNumber;
-	private int policyValidityDays;
-    private Date date;
 
-    public String getPatientName() {
+    private Patient patientName;
+    private int patientAge;
+    private long document;
+    private User doctorName;
+    private String insuranceCompany;
+    private String policyNumber;
+    private String policyValidity;
+    private String policyEndingDate;
+    private boolean medicine;
+    private ClinicalOrder order;
+
+    public Patient getPatientName() {
         return patientName;
     }
-    public void setPatientName(String patientName) {
+    public void setPatientName(Patient patientName) {
         this.patientName = patientName;
     }
-    public int getAge() {
-        return age;
+    public int getPatientAge() {
+        return patientAge;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setPatientAge(int patientAge) {
+        this.patientAge = patientAge;
     }
     public long getDocument() {
         return document;
@@ -30,10 +31,10 @@ public class Invoice {
     public void setDocument(long document) {
         this.document = document;
     }
-    public String getDoctorName() {
+    public User getDoctorName() {
         return doctorName;
     }
-    public void setDoctorName(String doctorName) {
+    public void setDoctorName(User doctorName) {
         this.doctorName = doctorName;
     }
     public String getInsuranceCompany() {
@@ -42,35 +43,35 @@ public class Invoice {
     public void setInsuranceCompany(String insuranceCompany) {
         this.insuranceCompany = insuranceCompany;
     }
-    public int getPolicyNumber() {
+    public String getPolicyNumber() {
         return policyNumber;
     }
-    public void setPolicyNumber(int policyNumber) {
+    public void setPolicyNumber(String policyNumber) {
         this.policyNumber = policyNumber;
     }
-    public int getPolicyValidityDays() {
-        return policyValidityDays;
+    public String getPolicyValidity() {
+        return policyValidity;
     }
-    public void setPolicyValidityDays(int policyValidityDays) {
-        this.policyValidityDays = policyValidityDays;
+    public void setPolicyValidity(String policyValidity) {
+        this.policyValidity = policyValidity;
     }
-    public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
+    public String getPolicyEndingDate() {
+        return policyEndingDate;
+    }
+    public void setPolicyEndingDate(String policyEndingDate) {
+        this.policyEndingDate = policyEndingDate;
     }
     public boolean isMedicine() {
-
-        throw new UnsupportedOperationException();
+        return medicine;
     }
-    public Object getOrder() {
-
-        throw new UnsupportedOperationException();
+    public void setMedicine(boolean medicine) {
+        this.medicine = medicine;
     }
-    public void setOrder(ClinicalOrder clinicalOrder) {
-
-        throw new UnsupportedOperationException();
+    public ClinicalOrder getOrder() {
+        return order;
+    }
+    public void setOrder(ClinicalOrder order) {
+        this.order = order;
     }
 
 }

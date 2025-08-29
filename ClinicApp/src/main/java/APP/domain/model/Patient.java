@@ -1,12 +1,11 @@
 package APP.domain.model;
 
-import APP.domain.model.enums.PatientGender;
-
 public class Patient {
+
     private long document;
-    private String fullName;
+    private User patientName;
     private int age;
-    private PatientGender patientGender;
+    private String gender;
     private String address;
     private String phoneNumber;
     private String email;
@@ -17,11 +16,11 @@ public class Patient {
     public void setDocument(long document) {
         this.document = document;
     }
-    public String getFullName() {
-        return fullName;
+    public User getPatientName() {
+        return patientName;
     }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setPatientName(User patientName) {
+        this.patientName = patientName;
     }
     public int getAge() {
         return age;
@@ -29,11 +28,11 @@ public class Patient {
     public void setAge(int age) {
         this.age = age;
     }
-    public PatientGender getPatientGender() {
-        return patientGender;
+    public String getGender() {
+        return gender;
     }
-    public void setPatientGender(PatientGender patientGender) {
-        this.patientGender = patientGender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
     public String getAddress() {
         return address;
@@ -53,5 +52,5 @@ public class Patient {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
 }

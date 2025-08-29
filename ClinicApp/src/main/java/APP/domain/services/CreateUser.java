@@ -1,10 +1,11 @@
 package APP.domain.services;
 
 import APP.domain.model.User;
-import APP.domain.ports.UserPort;
+import APP.domain.repository.UserPort;
 
 public class CreateUser {
-    private UserPort userPort;
+
+	private UserPort userPort;
 
 	public void create(User user) throws Exception {
 		if (userPort.findByDocument(user) != null) {
@@ -16,4 +17,5 @@ public class CreateUser {
 		}
 		userPort.save(user);
 	}
+
 }
