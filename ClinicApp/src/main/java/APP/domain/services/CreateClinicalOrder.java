@@ -1,6 +1,9 @@
 package APP.domain.services;
 
 import APP.domain.repository.UserPort;
+
+import java.util.List;
+
 import APP.domain.model.ClinicalOrder;
 import APP.domain.model.Patient;
 import APP.domain.model.User;
@@ -8,6 +11,7 @@ import APP.domain.repository.ClinicalOrderPort;
 import APP.domain.repository.PatientPort;
 import APP.domain.model.enums.Role;
 
+//@Service
 public class CreateClinicalOrder {
     private UserPort userPort;
     private PatientPort patientPort;
@@ -29,5 +33,9 @@ public class CreateClinicalOrder {
         clinicalOrder.setDoctorName(doctor);
         clinicalOrderPort.save(clinicalOrder);
 
+    }
+
+    public List<ClinicalOrder> search(Patient patient) {
+        throw new UnsupportedOperationException("Unimplemented method 'search'");
     }
 }

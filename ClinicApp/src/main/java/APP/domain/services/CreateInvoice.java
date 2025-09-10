@@ -13,7 +13,7 @@ public class CreateInvoice {
     private ClinicalOrderPort clinicalOrderPort;
     private InvoicePort invoicePort;
 
-    public void create(Invoice invoice) throws Exception {
+    public void createInvoice(Invoice invoice) throws Exception {
         Patient posiblePatient = new Patient();
         posiblePatient.setDocument(invoice.getDocument());
         Patient patient = patientPort.findByDocument(posiblePatient); // tipo paciente y no tipo cedula

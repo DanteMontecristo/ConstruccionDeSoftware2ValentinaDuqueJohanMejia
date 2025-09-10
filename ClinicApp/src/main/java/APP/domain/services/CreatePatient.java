@@ -9,8 +9,9 @@ public class CreatePatient {
 
     public void createPatient(Patient patient) throws Exception {
         if (patientPort.findByDocument(patient) != null) {
-			throw new Exception("ya existe una persona registrada con esa cedula");
+			throw new Exception("Ya existe una persona registrada con esa cedula");
 		}
+        patientPort.save(patient);
     }
-
+    
 }

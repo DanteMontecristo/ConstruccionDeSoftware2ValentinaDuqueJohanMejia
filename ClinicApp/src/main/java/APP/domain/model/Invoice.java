@@ -12,7 +12,14 @@ public class Invoice {
     private String policyEndingDate;
     private boolean medicine;
     private ClinicalOrder order;
+    private String productName;
 
+    public String getProductName() {
+        return productName;
+    }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
     public Patient getPatientName() {
         return patientName;
     }
