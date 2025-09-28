@@ -7,9 +7,9 @@ import APP.domain.model.Patient;
 import APP.domain.repository.ClinicalRecordPort;
 import APP.domain.repository.PatientPort;
 
-
 public class SearchClinicalRecordByPatient {
-        private PatientPort patientPort;
+    
+    private PatientPort patientPort;
     private ClinicalRecordPort clinicalRecordPort;
     
     public List<ClinicalRecord> search(Patient patient) throws Exception {
@@ -18,7 +18,6 @@ public class SearchClinicalRecordByPatient {
             throw new Exception("No existe el paciente buscado");
         }
         return clinicalRecordPort.findByPatient(patient);
-        
     }
     
 }

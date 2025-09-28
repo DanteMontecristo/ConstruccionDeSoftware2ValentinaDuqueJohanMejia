@@ -1,6 +1,7 @@
 package APP.application.usecase;
 
 import APP.domain.model.Invoice;
+import APP.domain.model.MedicalAppointment;
 import APP.domain.model.Patient;
 import APP.domain.services.CreateInvoice;
 import APP.domain.services.CreateMedicalAppointmen;
@@ -18,8 +19,8 @@ public class AdministrativeStaffUseCase {
         createPatient.createPatient(patient);
     }
 
-    public void createMedicalAppointment(Patient patient) throws Exception {
-        createMedicalAppointmen.createMedicalAppointment(patient);
+    public void createMedicalAppointment(MedicalAppointment medicalAppointment) throws Exception {
+        createMedicalAppointmen.createMedicalAppointment(medicalAppointment);
     }
 
     public void createInvoice(Invoice invoice) throws Exception {
@@ -29,4 +30,5 @@ public class AdministrativeStaffUseCase {
     public void update(Patient patient) throws Exception {
         updatePatient.update(patient);
     }
+    
 }

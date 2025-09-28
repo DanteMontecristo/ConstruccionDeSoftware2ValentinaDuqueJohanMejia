@@ -1,25 +1,19 @@
 package APP.domain.services;
 
+import APP.domain.model.MedicalAppointment;
 import APP.domain.model.Patient;
-import APP.domain.repository.PatientPort;
-import APP.domain.repository.UserPort;
-import APP.domain.model.User;
+import APP.domain.repository.MedicalAppointmentPort;
 
 public class CreateMedicalAppointmen {
 
-    private PatientPort patientPort;
-    private UserPort userPort;
+    private MedicalAppointmentPort medicalAppointmentPort;
+    private Patient patient;
 
-    public void createMedicalAppointment(User user) throws Exception {
-        if (userPort.findByUserName(user) == null) {
+    public void createMedicalAppointment(MedicalAppointment medicalAppointment) throws Exception {
+        if (medicalAppointmentPort.findByDocument(medicalAppointment) == null) {
             throw new Exception("El usuario no se encuentra registrado");
         }
+        medicalAppointmentPort.save(patient);
     }
 
-    public void createMedicalAppointment(Patient patient) throws Exception {
-        if (patientPort.findByDocument(patient) == null) {
-            throw new Exception("El paciente no se encuentra registrado");
-        }
-        patientPort.save(patient);
-    }
 }

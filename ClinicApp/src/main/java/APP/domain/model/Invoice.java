@@ -3,7 +3,6 @@ package APP.domain.model;
 public class Invoice {
 
     private Patient patientName;
-    private int patientAge;
     private long document;
     private User doctorName;
     private String insuranceCompany;
@@ -25,12 +24,6 @@ public class Invoice {
     }
     public void setPatientName(Patient patientName) {
         this.patientName = patientName;
-    }
-    public int getPatientAge() {
-        return patientAge;
-    }
-    public void setPatientAge(int patientAge) {
-        this.patientAge = patientAge;
     }
     public long getDocument() {
         return document;

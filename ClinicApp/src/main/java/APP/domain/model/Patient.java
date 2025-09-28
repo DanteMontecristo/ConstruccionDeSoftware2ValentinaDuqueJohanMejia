@@ -3,7 +3,7 @@ package APP.domain.model;
 public class Patient {
 
     private long document;
-    private User patientName;
+    private String patientName;
     private int age;
     private String gender;
     private String address;
@@ -16,10 +16,10 @@ public class Patient {
     public void setDocument(long document) {
         this.document = document;
     }
-    public User getPatientName() {
+    public String getPatientName() {
         return patientName;
     }
-    public void setPatientName(User patientName) {
+    public void setPatientName(String patientName) {
         this.patientName = patientName;
     }
     public int getAge() {

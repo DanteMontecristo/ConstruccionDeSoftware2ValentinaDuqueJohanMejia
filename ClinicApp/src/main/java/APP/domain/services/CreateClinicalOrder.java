@@ -32,7 +32,6 @@ public class CreateClinicalOrder {
         clinicalOrder.setPatientName(patient);
         clinicalOrder.setDoctorName(doctor);
         clinicalOrderPort.save(clinicalOrder);
-
     }
 
     public List<ClinicalOrder> search(Patient patient) {

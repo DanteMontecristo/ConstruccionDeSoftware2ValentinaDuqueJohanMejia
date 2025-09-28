@@ -86,4 +86,5 @@ public class RRHHUseCase {
         user.setRole(Role.DOCTOR);
         eliminateUser.eliminate(user);
     }
+    
 }

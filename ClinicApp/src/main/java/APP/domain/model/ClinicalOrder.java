@@ -9,6 +9,8 @@ public class ClinicalOrder {
     private String medicine;
     private String doce;
     private Date date;
+    private long id;
+
 
     public long getDocument() {
         return document;
@@ -47,5 +49,12 @@ public class ClinicalOrder {
         this.date = date;
     }
 
-    
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 }

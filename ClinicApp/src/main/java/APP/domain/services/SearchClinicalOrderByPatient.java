@@ -18,8 +18,6 @@ public class SearchClinicalOrderByPatient {
             throw new Exception("el paciente no se encuentra registrado");
         }
         return clinicalOrderPort.findByPatient(patient);
-        
     }
     
 }
-
