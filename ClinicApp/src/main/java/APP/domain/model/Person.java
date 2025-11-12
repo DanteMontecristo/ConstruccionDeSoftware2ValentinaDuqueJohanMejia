@@ -3,6 +3,8 @@ package APP.domain.model;
 import APP.domain.model.enums.Role;
 
 public class Person {
+    
+    private long id;
     private String name;
     private long document;
     private String email;
@@ -10,7 +12,12 @@ public class Person {
     private int age;
     private String address;
     private Role role;
-    
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -53,5 +60,7 @@ public class Person {
     public void setRole(Role role) {
         this.role = role;
     }
+    
+    
 
 }

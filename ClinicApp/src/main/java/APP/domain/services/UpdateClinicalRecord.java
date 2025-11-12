@@ -1,7 +1,7 @@
 package APP.domain.services;
 
 import APP.domain.model.ClinicalRecord;
-import APP.domain.repository.ClinicalRecordPort;
+import APP.domain.ports.ClinicalRecordPort;
 
 public class UpdateClinicalRecord {
 

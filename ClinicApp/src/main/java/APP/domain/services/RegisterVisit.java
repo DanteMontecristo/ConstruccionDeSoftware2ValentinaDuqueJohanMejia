@@ -1,7 +1,7 @@
 package APP.domain.services;
 
 import APP.domain.model.Patient;
-import APP.domain.repository.PatientPort;
+import APP.domain.ports.PatientPort;
 
 public class RegisterVisit {
 

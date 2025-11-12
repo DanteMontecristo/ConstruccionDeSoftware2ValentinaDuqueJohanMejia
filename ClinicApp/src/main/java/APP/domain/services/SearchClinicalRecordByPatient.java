@@ -4,8 +4,8 @@ import java.util.List;
 
 import APP.domain.model.ClinicalRecord;
 import APP.domain.model.Patient;
-import APP.domain.repository.ClinicalRecordPort;
-import APP.domain.repository.PatientPort;
+import APP.domain.ports.ClinicalRecordPort;
+import APP.domain.ports.PatientPort;
 
 public class SearchClinicalRecordByPatient {
     

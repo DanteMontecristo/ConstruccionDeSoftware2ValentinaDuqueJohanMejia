@@ -4,7 +4,7 @@ public class Visit {
 
     private long document;
     private String visitName;
-    private User patientName;
+    private User name;
     
     public long getDocument() {
         return document;
@@ -18,11 +18,11 @@ public class Visit {
     public void setVisitName(String visitName) {
         this.visitName = visitName;
     }
-    public User getPatientName() {
-        return patientName;
+    public User getName() {
+        return name;
     }
-    public void setPatientName(User patientName) {
-        this.patientName = patientName;
+    public void setName(User name) {
+        this.name = name;
     }
 
 }

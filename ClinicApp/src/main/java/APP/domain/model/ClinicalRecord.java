@@ -5,7 +5,7 @@ import java.sql.Date;
 public class ClinicalRecord {
 
     private long document;
-	private Patient patientName;
+	private Patient name;
 	private User doctorName;
 	private Date date;
 	private String motive;
@@ -19,6 +19,7 @@ public class ClinicalRecord {
 	private String proceddureDetail;
 	private String symptoms;
 	private boolean status;
+    private long id;
 
     public long getDocument() {
         return document;
@@ -26,11 +27,11 @@ public class ClinicalRecord {
     public void setDocument(long document) {
         this.document = document;
     }
-    public Patient getPatientName() {
-        return patientName;
+    public Patient getName() {
+        return name;
     }
-    public void setPatientName(Patient patientName) {
-        this.patientName = patientName;
+    public void setName(Patient name) {
+        this.name = name;
     }
     public User getDoctorName() {
         return doctorName;
@@ -111,8 +112,13 @@ public class ClinicalRecord {
         this.status = status;
     }
     public static ClinicalOrder getclinicalOrder() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getclinicalOrder'");
+        throw new UnsupportedOperationException();
     }
-
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+    
 }

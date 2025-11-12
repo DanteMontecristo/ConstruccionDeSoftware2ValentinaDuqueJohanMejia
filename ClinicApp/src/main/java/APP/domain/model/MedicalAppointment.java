@@ -5,6 +5,8 @@ public class MedicalAppointment {
     private String date;
     private String time;
     private String reason;
+    private String patientName;
+    private String doctorName;
 
     public String getDate() {
         return date;
@@ -23,6 +25,18 @@ public class MedicalAppointment {
     }
     public void setReason(String reason) {
         this.reason = reason;
+    }
+    public String getPatientName() {
+        return patientName;
+    }
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+    public String getDoctorName() {
+        return doctorName;
+    }
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
     
 }

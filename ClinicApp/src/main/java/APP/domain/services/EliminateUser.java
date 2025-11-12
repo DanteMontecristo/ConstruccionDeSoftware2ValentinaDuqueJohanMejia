@@ -1,7 +1,7 @@
 package APP.domain.services;
 
 import APP.domain.model.User;
-import APP.domain.repository.UserPort;
+import APP.domain.ports.UserPort;
 
 public class EliminateUser {
 

@@ -1,11 +1,11 @@
 package APP.domain.services;
 
-import APP.domain.repository.ClinicalOrderPort;
-import APP.domain.repository.PatientPort;
-import APP.domain.repository.InvoicePort;
 import APP.domain.model.ClinicalOrder;
 import APP.domain.model.Invoice;
 import APP.domain.model.Patient;
+import APP.domain.ports.ClinicalOrderPort;
+import APP.domain.ports.InvoicePort;
+import APP.domain.ports.PatientPort;
 
 public class CreateInvoice {
 
@@ -22,12 +22,12 @@ public class CreateInvoice {
         }
         if (invoice.isMedicine()){
             ClinicalOrder clinicalOrder = clinicalOrderPort.findByDocument(invoice.getOrder());
-            if (clinicalOrder == null || patient.getDocument() != clinicalOrder.getPatientName().getDocument()) {
+            if (clinicalOrder == null || patient.getDocument() != clinicalOrder.getName().getDocument()) {
                 throw new Exception("El medicamento requiere de una orden asociada");
             }
             invoice.setOrder(clinicalOrder);
         }
-        invoice.setPatientName(patient);
+        invoice.setName(patient);
         invoicePort.save(invoice);
     }
 }

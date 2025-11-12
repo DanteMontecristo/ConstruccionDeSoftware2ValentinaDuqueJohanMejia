@@ -2,7 +2,7 @@ package APP.domain.model;
 
 public class Invoice {
 
-    private Patient patientName;
+    private Patient name;
     private long document;
     private User doctorName;
     private String insuranceCompany;
@@ -19,11 +19,11 @@ public class Invoice {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-    public Patient getPatientName() {
-        return patientName;
+    public Patient getName() {
+        return name;
     }
-    public void setPatientName(Patient patientName) {
-        this.patientName = patientName;
+    public void setName(Patient name) {
+        this.name = name;
     }
     public long getDocument() {
         return document;

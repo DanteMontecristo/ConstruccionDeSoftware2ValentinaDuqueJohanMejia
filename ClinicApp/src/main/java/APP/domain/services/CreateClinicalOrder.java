@@ -1,15 +1,14 @@
 package APP.domain.services;
 
-import APP.domain.repository.UserPort;
-
 import java.util.List;
 
 import APP.domain.model.ClinicalOrder;
 import APP.domain.model.Patient;
 import APP.domain.model.User;
-import APP.domain.repository.ClinicalOrderPort;
-import APP.domain.repository.PatientPort;
 import APP.domain.model.enums.Role;
+import APP.domain.ports.ClinicalOrderPort;
+import APP.domain.ports.PatientPort;
+import APP.domain.ports.UserPort;
 
 //@Service
 public class CreateClinicalOrder {

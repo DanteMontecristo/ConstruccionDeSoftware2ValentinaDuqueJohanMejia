@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class ClinicalOrder {
     private long document;
-    private Patient patientName;
+    private Patient name;
     private User doctorName;
     private String medicine;
     private String doce;
@@ -18,11 +18,11 @@ public class ClinicalOrder {
     public void setDocument(long document) {
         this.document = document;
     }
-    public Patient getPatientName() {
-        return patientName;
+    public Patient getName() {
+        return name;
     }
-    public void setPatientName(Patient patientName) {
-        this.patientName = patientName;
+    public void setPatientName(Patient name) {
+        this.name = name;
     }
     public User getDoctorName() {
         return doctorName;

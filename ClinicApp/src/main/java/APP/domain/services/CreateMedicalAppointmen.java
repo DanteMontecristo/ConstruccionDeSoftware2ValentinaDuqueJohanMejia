@@ -2,7 +2,7 @@ package APP.domain.services;
 
 import APP.domain.model.MedicalAppointment;
 import APP.domain.model.Patient;
-import APP.domain.repository.MedicalAppointmentPort;
+import APP.domain.ports.MedicalAppointmentPort;
 
 public class CreateMedicalAppointmen {
 
