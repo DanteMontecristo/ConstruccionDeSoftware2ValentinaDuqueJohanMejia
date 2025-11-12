@@ -29,7 +29,7 @@ public class ClinicalRecordEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
-    private PatientEntity name;
+    private PatientEntity patient;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
@@ -90,12 +90,12 @@ public class ClinicalRecordEntity {
         this.document = document;
     }
 
-    public PatientEntity getName() {
-        return name;
+    public PatientEntity getPatient() {
+        return patient;
     }
 
-    public void setName(PatientEntity name) {
-        this.name = name;
+    public void setPatient(PatientEntity patient) {
+        this.patient = patient;
     }
 
     public UserEntity getDoctorName() {

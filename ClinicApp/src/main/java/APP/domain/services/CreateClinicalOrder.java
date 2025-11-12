@@ -28,7 +28,7 @@ public class CreateClinicalOrder {
             throw new Exception("Las ordenes se deben de aplicar a pacientes registrados");
         }
 
-        clinicalOrder.setPatientName(patient);
+        clinicalOrder.setName(patient);
         clinicalOrder.setDoctorName(doctor);
         clinicalOrderPort.save(clinicalOrder);
     }

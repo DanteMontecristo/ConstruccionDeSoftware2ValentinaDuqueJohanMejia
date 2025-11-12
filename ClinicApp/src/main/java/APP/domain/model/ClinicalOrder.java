@@ -21,7 +21,7 @@ public class ClinicalOrder {
     public Patient getName() {
         return name;
     }
-    public void setPatientName(Patient name) {
+    public void setName(Patient name) {
         this.name = name;
     }
     public User getDoctorName() {

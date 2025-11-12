@@ -10,7 +10,7 @@ public class InvoiceMapper {
 
         InvoiceEntity entity = new InvoiceEntity();
         entity.setDocument(invoice.getDocument());
-        entity.setName(PatientMapper.toEntity(invoice.getName()));
+        entity.setPatient(PatientMapper.toEntity(invoice.getName()));
         entity.setDoctorName(UserMapper.toEntity(invoice.getDoctorName()));
         entity.setInsuranceCompany(invoice.getInsuranceCompany());
         entity.setPolicyNumber(invoice.getPolicyNumber());
@@ -27,7 +27,7 @@ public class InvoiceMapper {
 
         Invoice invoice = new Invoice();
         invoice.setDocument(entity.getDocument());
-        invoice.setName(PatientMapper.toDomain(entity.getName()));
+        invoice.setName(PatientMapper.toDomain(entity.getPatient()));
         invoice.setDoctorName(UserMapper.toDomain(entity.getDoctorName()));
         invoice.setInsuranceCompany(entity.getInsuranceCompany());
         invoice.setPolicyNumber(entity.getPolicyNumber());

@@ -31,7 +31,7 @@ public final class ClinicalRecordMapper {
         ClinicalRecord domain = new ClinicalRecord();
 
         domain.setDocument(entity.getDocument() != null ? entity.getDocument() : 0L);
-        domain.setName(entity.getName() != null ? PatientMapper.toDomain(entity.getName()) : null);
+        domain.setName(entity.getPatient() != null ? PatientMapper.toDomain(entity.getPatient()) : null);
         domain.setDoctorName(entity.getDoctorName() != null ? UserMapper.toDomain(entity.getDoctorName()) : null);
         domain.setDate(entity.getDate() != null ? (Date) entity.getDate() : null);
         domain.setMotive(entity.getMotive());
@@ -62,9 +62,9 @@ public final class ClinicalRecordMapper {
         Patient patientDomain = domain.getName();
         if (patientDomain != null) {
             PatientEntity pe = PatientMapper.toEntity(patientDomain);
-            entity.setName(pe);
+            entity.setPatient(pe);
         } else {
-            entity.setName(null);
+            entity.setPatient(null);
         }
 
         User doctorDomain = domain.getDoctorName();
@@ -110,9 +110,9 @@ public final class ClinicalRecordMapper {
 
         // patient
         if (domain.getName() != null) {
-            entity.setName(PatientMapper.toEntity(domain.getName()));
+            entity.setPatient(PatientMapper.toEntity(domain.getName()));
         } else {
-            entity.setName(null);
+            entity.setPatient(null);
         }
 
         // doctor

@@ -19,7 +19,7 @@ public class InvoiceEntity {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
-    private PatientEntity name;
+    private PatientEntity patient;
 
     @Column(nullable = false, unique = true)
     private long document;
@@ -59,12 +59,12 @@ public class InvoiceEntity {
         this.id = id;
     }
 
-    public PatientEntity getName() {
-        return name;
+    public PatientEntity getPatient() {
+        return patient;
     }
 
-    public void setName(PatientEntity name) {
-        this.name = name;
+    public void setPatient(PatientEntity patient) {
+        this.patient = patient;
     }
 
     public long getDocument() {

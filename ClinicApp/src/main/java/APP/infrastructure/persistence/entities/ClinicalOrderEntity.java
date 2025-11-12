@@ -37,7 +37,7 @@ public class ClinicalOrderEntity {
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
-    private PatientEntity patientName;
+    private PatientEntity patient;
 
     /**
      * Relación al doctor (usuario).
@@ -72,12 +72,12 @@ public class ClinicalOrderEntity {
         this.document = document;
     }
 
-    public PatientEntity getPatientName() {
-        return patientName;
+    public PatientEntity getPatient() {
+        return patient;
     }
 
-    public void setPatientName(PatientEntity patientName) {
-        this.patientName = patientName;
+    public void setPatient(PatientEntity patient) {
+        this.patient = patient;
     }
 
     public UserEntity getDoctorName() {

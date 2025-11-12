@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import APP.adapter.rest.mapper.InvoiceRestMapper;
 import APP.adapter.rest.mapper.MedicalAppointmentRestMapper;
 import APP.adapter.rest.mapper.PatientRestMapper;
@@ -19,48 +22,43 @@ import APP.application.usecase.AdministrativeStaffUseCase;
 import APP.domain.model.Invoice;
 import APP.domain.model.MedicalAppointment;
 import APP.domain.model.Patient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
+@RestController
+@RequestMapping("/api/administrative-staff")
+@PreAuthorize("hasRole('ADMINISTRATIVE_STAFF')")
 public class AdministrativeStaffController {
 
-    @RestController
-    @RequestMapping("/api/administrative-staff")
-    @PreAuthorize("hasRole('ADMINISTRATIVE_STAFF')")
-    public class AdministrativeStaffRestController {
-    
-        @Autowired
-        private AdministrativeStaffUseCase administrativeStaffUseCase;
+    @Autowired
+    private AdministrativeStaffUseCase administrativeStaffUseCase;
 
-        @Autowired
-        private  PatientRestMapper patientRestMapper;
+    @Autowired
+    private PatientRestMapper patientRestMapper;
 
-        @Autowired
-        private InvoiceRestMapper invoiceRestMapper;
+    @Autowired
+    private InvoiceRestMapper invoiceRestMapper;
 
-        @Autowired
-        private MedicalAppointmentRestMapper medicalAppointmentRestMapper;
+    @Autowired
+    private MedicalAppointmentRestMapper medicalAppointmentRestMapper;
 
-        @PostMapping("/patient")
-        public ResponseEntity<PatientResponse> createPatient(@RequestBody PatientRequest request) throws Exception {
-            Patient patient = patientRestMapper.toDomain(request);
-            administrativeStaffUseCase.createPatient(patient);
-            return new ResponseEntity<>(patientRestMapper.toResponse(patient), HttpStatus.CREATED);
-        }
-        
-        @PostMapping("/invoice ")
-        public ResponseEntity<InvoiceResponse> createInvoice(@RequestBody InvoiceRequest request) throws Exception {
-            Invoice invoice = invoiceRestMapper.toDomain(request);
-            administrativeStaffUseCase.createInvoice(invoice);
-            return new ResponseEntity<>(invoiceRestMapper.toResponse(invoice), HttpStatus.CREATED);
-        }
-        
-        @PostMapping("/medicalappointment ")
-        public ResponseEntity<MedicalAppointmentResponse> createMedicalAppointment(@RequestBody MedicalAppointmentRequest request) throws Exception {
-            MedicalAppointment medicalAppointment = medicalAppointmentRestMapper.toDomain(request);
-            administrativeStaffUseCase.createMedicalAppointment(medicalAppointment);
-            return new ResponseEntity<>(medicalAppointmentRestMapper.toResponse(medicalAppointment), HttpStatus.CREATED);
-        }
-
+    @PostMapping("/patient")
+    public ResponseEntity<PatientResponse> createPatient(@RequestBody PatientRequest request) throws Exception {
+        Patient patient = patientRestMapper.toDomain(request);
+        administrativeStaffUseCase.createPatient(patient);
+        return new ResponseEntity<>(patientRestMapper.toResponse(patient), HttpStatus.CREATED);
     }
+
+    @PostMapping("/invoice")
+    public ResponseEntity<InvoiceResponse> createInvoice(@RequestBody InvoiceRequest request) throws Exception {
+        Invoice invoice = invoiceRestMapper.toDomain(request);
+        administrativeStaffUseCase.createInvoice(invoice);
+        return new ResponseEntity<>(invoiceRestMapper.toResponse(invoice), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/medicalappointment")
+    public ResponseEntity<MedicalAppointmentResponse> createMedicalAppointment(@RequestBody MedicalAppointmentRequest request) throws Exception {
+        MedicalAppointment medicalAppointment = medicalAppointmentRestMapper.toDomain(request);
+        administrativeStaffUseCase.createMedicalAppointment(medicalAppointment);
+        return new ResponseEntity<>(medicalAppointmentRestMapper.toResponse(medicalAppointment), HttpStatus.CREATED);
+    }
+
 }

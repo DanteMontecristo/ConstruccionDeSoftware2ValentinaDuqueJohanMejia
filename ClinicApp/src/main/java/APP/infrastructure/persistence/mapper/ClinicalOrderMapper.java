@@ -33,11 +33,11 @@ public final class ClinicalOrderMapper {
         domain.setDocument(entity.getDocument() != null ? entity.getDocument() : 0L);
 
         // patient (usa PatientEntityMapper)
-        PatientEntity patientEntity = entity.getPatientName();
+        PatientEntity patientEntity = entity.getPatient();
         if (patientEntity != null) {
-            domain.setPatientName(PatientMapper.toDomain(patientEntity));
+            domain.setName(PatientMapper.toDomain(patientEntity));
         } else {
-            domain.setPatientName(null);
+            domain.setName(null);
         }
 
         // doctor (usa UserEntityMapper)
@@ -76,9 +76,9 @@ public final class ClinicalOrderMapper {
 
         // patient
         if (domain.getName() != null) {
-            entity.setPatientName(PatientMapper.toEntity(domain.getName()));
+            entity.setPatient(PatientMapper.toEntity(domain.getName()));
         } else {
-            entity.setPatientName(null);
+            entity.setPatient(null);
         }
 
         // doctor
@@ -109,9 +109,9 @@ public final class ClinicalOrderMapper {
 
         // actualizar patient
         if (domain.getName() != null) {
-            entity.setPatientName(PatientMapper.toEntity(domain.getName()));
+            entity.setPatient(PatientMapper.toEntity(domain.getName()));
         } else {
-            entity.setPatientName(null);
+            entity.setPatient(null);
         }
 
         // actualizar doctor
