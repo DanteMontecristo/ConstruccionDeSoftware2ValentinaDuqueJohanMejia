@@ -1,8 +1,10 @@
 package APP.adapter.out.persistence;
 
+import org.springframework.stereotype.Component;
 import APP.domain.model.User;
 import APP.domain.ports.UserPort;
 
+@Component
 public class UserAdapterOther implements UserPort {
 
     @Override

@@ -1,12 +1,14 @@
 package APP.adapter.rest.mapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import APP.adapter.in.builder.UserBuilder;
 import APP.adapter.rest.request.CreateUserRequest;
 import APP.adapter.rest.response.UserResponse;
 import APP.domain.model.User;
 
+@Component
 public class UserRestMapper {
 
     @Autowired

@@ -1,10 +1,14 @@
 package APP.domain.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import APP.domain.model.User;
 import APP.domain.ports.UserPort;
 
+@Component
 public class UpdateUser {
 
+    @Autowired
     private UserPort userPort;
 
     public void update(User user) throws Exception {

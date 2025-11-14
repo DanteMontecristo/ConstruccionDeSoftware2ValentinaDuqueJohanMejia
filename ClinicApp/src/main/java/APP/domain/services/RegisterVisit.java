@@ -1,10 +1,14 @@
 package APP.domain.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import APP.domain.model.Patient;
 import APP.domain.ports.PatientPort;
 
+@Component
 public class RegisterVisit {
 
+    @Autowired
     private PatientPort patientPort;
 
     public void registerVisit(Patient patient) throws Exception {

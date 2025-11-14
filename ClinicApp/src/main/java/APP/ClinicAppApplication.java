@@ -8,7 +8,7 @@ public class ClinicAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClinicAppApplication.class, args);
-		System.out.println("estoy vivo");
+		System.out.println("Estoy vivo");
 	}
 
 }

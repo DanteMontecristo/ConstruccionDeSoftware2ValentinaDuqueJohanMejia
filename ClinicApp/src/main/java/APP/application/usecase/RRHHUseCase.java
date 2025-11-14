@@ -1,15 +1,24 @@
 package APP.application.usecase;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import APP.domain.services.CreateUser;
 import APP.domain.model.User;
 import APP.domain.model.enums.Role;
 import APP.domain.services.UpdateUser;
 import APP.domain.services.EliminateUser;
 
+@Component
 public class RRHHUseCase {
 
+    @Autowired
     private CreateUser createUser;
+    
+    @Autowired
     private UpdateUser updateUser;
+    
+    @Autowired
     private EliminateUser eliminateUser;
 
     public void createRrHh(User user) throws Exception {

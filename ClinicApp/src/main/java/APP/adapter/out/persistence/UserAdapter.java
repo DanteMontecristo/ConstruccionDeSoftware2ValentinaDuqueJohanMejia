@@ -1,5 +1,6 @@
 package APP.adapter.out.persistence;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import APP.domain.model.User;
 import APP.domain.ports.UserPort;
@@ -9,6 +10,7 @@ import APP.infrastructure.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
+@Primary
 public class UserAdapter implements UserPort {
 
     @Autowired

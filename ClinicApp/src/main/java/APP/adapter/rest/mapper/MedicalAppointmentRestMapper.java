@@ -1,11 +1,13 @@
 package APP.adapter.rest.mapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import APP.adapter.in.builder.MedicalAppointmentBuilder;
 import APP.adapter.rest.request.MedicalAppointmentRequest;
 import APP.adapter.rest.response.MedicalAppointmentResponse;
 import APP.domain.model.MedicalAppointment;
 
+@Component
 public class MedicalAppointmentRestMapper {
 
     @Autowired

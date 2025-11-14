@@ -2,6 +2,9 @@ package APP.domain.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import APP.domain.model.ClinicalOrder;
 import APP.domain.model.Patient;
 import APP.domain.model.User;
@@ -10,10 +13,16 @@ import APP.domain.ports.ClinicalOrderPort;
 import APP.domain.ports.PatientPort;
 import APP.domain.ports.UserPort;
 
-//@Service
+@Component
 public class CreateClinicalOrder {
+    
+    @Autowired
     private UserPort userPort;
+    
+    @Autowired
     private PatientPort patientPort;
+    
+    @Autowired
     private ClinicalOrderPort clinicalOrderPort;
 
     public void create(ClinicalOrder clinicalOrder) throws Exception {
