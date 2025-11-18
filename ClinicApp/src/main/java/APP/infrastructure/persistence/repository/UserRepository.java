@@ -11,4 +11,13 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
 	public UserEntity findByUserName(String userName);
 
+	// Busca username sin distinguir mayúsculas/minúsculas
+	public UserEntity findByUserNameIgnoreCase(String userName);
+
+	// Busca por nombre (name field)
+	public UserEntity findByName(String name);
+
+	// Busca por nombre sin distinguir mayúsculas/minúsculas
+	public UserEntity findByNameIgnoreCase(String name);
+
 }

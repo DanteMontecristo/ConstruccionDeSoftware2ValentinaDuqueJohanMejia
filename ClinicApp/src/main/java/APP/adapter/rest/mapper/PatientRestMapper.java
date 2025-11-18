@@ -25,6 +25,10 @@ public Patient toDomain(PatientRequest req) throws Exception {
     );
 }
 
+public Patient toDomainForSearch(PatientRequest req) throws Exception {
+    return patientBuilder.buildForSearch(req.getDocument());
+}
+
 public PatientResponse toResponse(Patient patient) {
     PatientResponse res = new PatientResponse();
     res.setDocument(patient.getDocument());

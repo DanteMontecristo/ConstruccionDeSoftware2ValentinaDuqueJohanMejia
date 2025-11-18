@@ -18,15 +18,31 @@ public class InvoiceBuilder {
         Invoice invoice = new Invoice();
         Patient patient = new Patient();
         User user = new User();
+        
+        // Validate and set document
         invoice.setDocument(invoiceValidator.documentValidator(document));
+        
+        // Validate and set patient with name and document
+        patient.setDocument(invoiceValidator.documentValidator(document));
         patient.setName(invoiceValidator.nameValidator(name));
+        invoice.setName(patient);
+        
+        // Validate and set doctor with name
         user.setName(invoiceValidator.doctorNameValidator(doctorName));
+        invoice.setDoctorName(user);
+        
         invoice.setInsuranceCompany(invoiceValidator.insuranceCompanyValidator(insuranceCompany));
         invoice.setPolicyNumber(invoiceValidator.policyNumberValidator(policyNumber));
         invoice.setPolicyValidity(invoiceValidator.policyValidityValidator(policyValidity));
         invoice.setPolicyEndingDate(invoiceValidator.policyEndingDateValidator(policyEndingDate));
         invoice.setProductName(invoiceValidator.productNameValidator(productName));
-        if (invoice.isMedicine()) {
+        
+        // Validate and set medicine BEFORE checking it
+        boolean isMedicine = invoiceValidator.isMedicineValidator(medicine);
+        invoice.setMedicine(isMedicine);
+        
+        // If medicine, validate and set clinical order
+        if (isMedicine) {
 			ClinicalOrder clinicalOrder = new ClinicalOrder();
 			clinicalOrder.setId(invoiceValidator.orderIdValidator(order));
 			invoice.setOrder(clinicalOrder);

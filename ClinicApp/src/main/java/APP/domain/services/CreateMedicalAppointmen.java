@@ -17,7 +17,8 @@ public class CreateMedicalAppointmen {
         if (patient == null) {
             throw new Exception("El usuario no se encuentra registrado");
         }
-        medicalAppointmentPort.save(patient);
+        // Persistir la cita médica (ahora el port.save acepta MedicalAppointment)
+        medicalAppointmentPort.save(medicalAppointment);
     }
 
 }

@@ -3,8 +3,11 @@ package APP.adapter.rest.request;
 public class ClinicalRecordRequest {
 
     private String doctorDocument;
+    private String doctorName;
     private String patientDocument;
+    private String document;
     private String orderId;
+    private String clinicalOrder;
     private String motive;
     private String diagnosis;
     private String medicine;
@@ -21,17 +24,35 @@ public class ClinicalRecordRequest {
     public void setDoctorDocument(String doctorDocument) {
         this.doctorDocument = doctorDocument;
     }
+    public String getDoctorName() {
+        return doctorName;
+    }
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
     public String getPatientDocument() {
         return patientDocument;
     }
     public void setPatientDocument(String patientDocument) {
         this.patientDocument = patientDocument;
     }
+    public String getDocument() {
+        return document;
+    }
+    public void setDocument(String document) {
+        this.document = document;
+    }
     public String getOrderId() {
         return orderId;
     }
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+    public String getClinicalOrder() {
+        return clinicalOrder;
+    }
+    public void setClinicalOrder(String clinicalOrder) {
+        this.clinicalOrder = clinicalOrder;
     }
     public String getMotive() {
         return motive;

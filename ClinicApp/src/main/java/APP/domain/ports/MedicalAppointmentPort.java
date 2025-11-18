@@ -6,5 +6,5 @@ import APP.domain.model.Patient;
 public interface MedicalAppointmentPort {
 
     public Patient findByDocument(MedicalAppointment medicalAppointment) throws Exception;
-    public void save(Patient patient) throws Exception;
+    public void save(MedicalAppointment medicalAppointment) throws Exception;
 }

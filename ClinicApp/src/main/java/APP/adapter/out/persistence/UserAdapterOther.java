@@ -21,4 +21,9 @@ public class UserAdapterOther implements UserPort {
 	public void save(User user) throws Exception {
 	}
 
+	@Override
+	public User findByName(String name) throws Exception {
+		throw new UnsupportedOperationException();
+	}
+
 }

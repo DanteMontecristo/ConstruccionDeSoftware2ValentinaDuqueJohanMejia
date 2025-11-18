@@ -55,8 +55,12 @@ public final class ClinicalRecordMapper {
 
         ClinicalRecordEntity entity = new ClinicalRecordEntity();
 
-        // document
-        entity.setDocument(domain.getDocument());
+        // document: si el dominio no trae document (0), usar el document del patient si está disponible
+        long doc = domain.getDocument();
+        if (doc == 0 && domain.getName() != null) {
+            doc = domain.getName().getDocument();
+        }
+        entity.setDocument(doc);
 
         // relaciones
         Patient patientDomain = domain.getName();
@@ -106,7 +110,12 @@ public final class ClinicalRecordMapper {
     public static void updateEntityFromDomain(ClinicalRecordEntity entity, ClinicalRecord domain) {
         if (entity == null || domain == null) return;
 
-        entity.setDocument(domain.getDocument());
+        // actualizar document con fallback a patient.document cuando el dominio no lo traiga
+        long doc2 = domain.getDocument();
+        if (doc2 == 0 && domain.getName() != null) {
+            doc2 = domain.getName().getDocument();
+        }
+        entity.setDocument(doc2);
 
         // patient
         if (domain.getName() != null) {

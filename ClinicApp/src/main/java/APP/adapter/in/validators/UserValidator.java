@@ -2,6 +2,7 @@ package APP.adapter.in.validators;
 
 import org.springframework.stereotype.Component;
 import APP.domain.model.enums.Role;
+import APP.application.exception.InputsException;
 
 @Component
 public class UserValidator extends SimpleValidator {
@@ -39,7 +40,12 @@ public class UserValidator extends SimpleValidator {
     }
 
     public Role roleValidator (String value) throws Exception {
-        return roleValidator(value);
+        stringValidator("rol de la persona", value);
+        try {
+            return Role.valueOf(value.toUpperCase());
+        } catch (Exception e) {
+            throw new InputsException("rol no valido");
+        }
     }
 
 }

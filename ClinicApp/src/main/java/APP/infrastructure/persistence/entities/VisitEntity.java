@@ -24,7 +24,7 @@ public class VisitEntity {
     private String visitName;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = true)
     private UserEntity name;
 
     // Getters y Setters

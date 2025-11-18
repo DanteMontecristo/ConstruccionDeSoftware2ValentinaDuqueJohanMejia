@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import APP.adapter.rest.mapper.InvoiceRestMapper;
 import APP.adapter.rest.mapper.MedicalAppointmentRestMapper;
 import APP.adapter.rest.mapper.PatientRestMapper;
@@ -24,8 +23,8 @@ import APP.domain.model.MedicalAppointment;
 import APP.domain.model.Patient;
 
 @RestController
-@RequestMapping("/api/administrative-staff")
-@PreAuthorize("hasRole('ADMINISTRATIVE_STAFF')")
+@RequestMapping("/api/administrative_staff")
+@PreAuthorize("hasRole('ADMINISTRATIVESTAFF')")
 public class AdministrativeStaffController {
 
     @Autowired

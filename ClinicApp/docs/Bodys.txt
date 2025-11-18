@@ -1,0 +1,25 @@
+User(Empleado)
+
+    "name": "Ingrid",
+    "document": "123",
+    "email": "malacara@gmail.com",
+    "phoneNumber": "524641",
+    "age": "21",
+    "address": "Tarqui, Huila",
+    "role": "RRHH",
+    "userName": "ingrid38",
+    "password": "0000"
+
+
+User(Paciente)
+
+    "document": 147,
+    "name": "La Niña",
+    "age": 12,
+    "gender": "female",
+    "address": "Calle Cachetes Tiernos 963",
+    "phoneNumber": "3521234465",
+    "email": "laniña88@example.com"
+
+
+    

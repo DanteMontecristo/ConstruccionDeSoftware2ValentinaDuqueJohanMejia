@@ -22,6 +22,10 @@ public final class PatientMapper {
         }
 
         Patient domain = new Patient();
+            // set id if present
+            if (entity.getId() != null) {
+                domain.setId(entity.getId());
+            }
 
         // Si tu modelo de dominio tiene Long id o no, ajusta. Aquí uso los campos que mostraste.
         // document/age en domain podían ser primitivos; manejamos nulls con defaults si hace falta.
@@ -55,6 +59,10 @@ public final class PatientMapper {
         }
 
         PatientEntity entity = new PatientEntity();
+            // If domain has id set (non-zero), propagate it so JPA treats it as existing
+            if (domain.getId() != 0L) {
+                entity.setId(domain.getId());
+            }
 
         // No seteamos id aquí (lo maneja JPA al persistir). Si quieres mantener id, añade getter en domain.
         entity.setDocument(domain.getDocument());

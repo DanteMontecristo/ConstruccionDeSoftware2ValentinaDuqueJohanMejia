@@ -27,4 +27,13 @@ public class PatientBuilder {
         return patient;      
     }
 
+    /**
+     * Build lightweight Patient used for searches where only document is provided.
+     */
+    public Patient buildForSearch(String document) throws Exception {
+        Patient patient = new Patient();
+        patient.setDocument(patientValidator.documentValidator(document));
+        return patient;
+    }
+
 }

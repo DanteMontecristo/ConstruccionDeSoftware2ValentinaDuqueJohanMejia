@@ -11,6 +11,9 @@ import APP.domain.model.ClinicalOrder;
 import APP.domain.model.ClinicalRecord;
 import APP.domain.model.Patient;
 import APP.domain.model.User;
+import APP.domain.ports.UserPort;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component
 public class ClinicalRecordRestMapper {
@@ -21,11 +24,37 @@ public class ClinicalRecordRestMapper {
     @Autowired
     private ClinicalRecordValidator clinicalRecordValidator;
 
+    @Autowired
+    private UserPort userPort;
+
+    private static final Logger logger = LoggerFactory.getLogger(ClinicalRecordRestMapper.class);
+
     public ClinicalRecord toDomain(ClinicalRecordRequest req) throws Exception {
+        // Support alternative/request variants: user may send `doctorName` and `document` instead
+        String doctorDoc = req.getDoctorDocument();
+        if ((doctorDoc == null || doctorDoc.isBlank()) && req.getDoctorName() != null) {
+            logger.info("Resolviendo doctorDocument desde doctorName='{}'", req.getDoctorName());
+            // buscar usuario por nombre
+            APP.domain.model.User found = userPort.findByName(req.getDoctorName());
+            if (found != null) {
+                doctorDoc = String.valueOf(found.getDocument());
+            }
+        }
+
+        String patientDoc = req.getPatientDocument();
+        if ((patientDoc == null || patientDoc.isBlank()) && req.getDocument() != null) {
+            patientDoc = req.getDocument();
+        }
+
+        String orderId = req.getOrderId();
+        if ((orderId == null || orderId.isBlank()) && req.getClinicalOrder() != null) {
+            orderId = req.getClinicalOrder();
+        }
+
         ClinicalRecord record = clinicalRecordBuilder.create(
-            req.getDoctorDocument(),
-            req.getPatientDocument(),
-            req.getOrderId()
+            doctorDoc,
+            patientDoc,
+            orderId
         );
             
         // Optional details validated if present

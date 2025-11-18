@@ -12,7 +12,12 @@ public class VisitMapper {
         VisitEntity entity = new VisitEntity();
         entity.setDocument(visit.getDocument());
         entity.setVisitName(visit.getVisitName());
-        entity.setName(UserMapper.toEntity(visit.getName()));
+        // Solo mapear el user si existe en el dominio
+        if (visit.getName() != null) {
+            entity.setName(UserMapper.toEntity(visit.getName()));
+        } else {
+            entity.setName(null);
+        }
         return entity;
     }
 
@@ -22,7 +27,12 @@ public class VisitMapper {
         Visit visit = new Visit();
         visit.setDocument(entity.getDocument());
         visit.setVisitName(entity.getVisitName());
-        visit.setName(UserMapper.toDomain(entity.getName()));
+        // Solo mapear si existe en la entidad
+        if (entity.getName() != null) {
+            visit.setName(UserMapper.toDomain(entity.getName()));
+        } else {
+            visit.setName(null);
+        }
         return visit;
     }
 }

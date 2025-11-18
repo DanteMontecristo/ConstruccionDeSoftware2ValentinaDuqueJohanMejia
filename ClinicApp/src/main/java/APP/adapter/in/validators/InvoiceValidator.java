@@ -11,8 +11,9 @@ public class InvoiceValidator extends SimpleValidator{
     }
 
     public boolean isMedicineValidator(String value) throws Exception {
-		stringValidator("venta de mediciona", value);
-		return value.equals("si");
+		stringValidator("venta de medicina", value);
+		// Case-insensitive check for SI/si/Yes/yes
+		return value != null && (value.equalsIgnoreCase("si") || value.equalsIgnoreCase("yes"));
 	}
 
     public String nameValidator(String value) throws Exception{

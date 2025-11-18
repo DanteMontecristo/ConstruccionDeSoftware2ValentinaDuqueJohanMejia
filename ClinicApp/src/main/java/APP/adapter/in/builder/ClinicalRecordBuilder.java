@@ -30,7 +30,10 @@ public class ClinicalRecordBuilder {
         ClinicalOrder order = new ClinicalOrder();
         doctor.setDocument(userValidator.documentValidator(document));
         patient.setDocument(patientValidator.documentValidator(patientId));
-        order.setDocument(clinicalOrderValidator.idValidator(orderId));
+        // asegurar que el campo 'document' del ClinicalRecord refleje el documento del paciente
+        clinicalRecord.setDocument(patient.getDocument());
+        // `orderId` corresponde al id de la orden; asignarlo a `id`, no a `document`
+        order.setId(clinicalOrderValidator.idValidator(orderId));
         clinicalRecord.setDoctorName(doctor);
         clinicalRecord.setName(patient);
         clinicalRecord.setClinicalOrder(order);
