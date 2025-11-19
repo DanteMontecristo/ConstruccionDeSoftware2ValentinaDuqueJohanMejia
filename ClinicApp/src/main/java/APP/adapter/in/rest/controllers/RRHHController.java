@@ -69,11 +69,71 @@ public class RRHHController {
 		return ResponseEntity.ok().build();
 	}
 
+	@PutMapping("/administrative-staff")
+	public ResponseEntity<Void> updateAdministrative(@RequestBody CreateUserRequest req) throws Exception {
+		User user = userRestMapper.toDomain(req);
+		rrhhUseCase.updateAdministrativeStaff(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@PutMapping("/information-support")
+	public ResponseEntity<Void> updateInformationSupport(@RequestBody CreateUserRequest req) throws Exception {
+		User user = userRestMapper.toDomain(req);
+		rrhhUseCase.updateInformationSupport(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@PutMapping("/nurse")
+	public ResponseEntity<Void> updateNurse(@RequestBody CreateUserRequest req) throws Exception {
+		User user = userRestMapper.toDomain(req);
+		rrhhUseCase.updateNurse(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@PutMapping("/doctor")
+	public ResponseEntity<Void> updateDoctor(@RequestBody CreateUserRequest req) throws Exception {
+		User user = userRestMapper.toDomain(req);
+		rrhhUseCase.updateDoctor(user);
+		return ResponseEntity.ok().build();
+	}
+
 	@DeleteMapping("/rrhh/{document}")
 	public ResponseEntity<Void> deleteRrhh(@PathVariable long document) throws Exception {
 		User user = new User();
 		user.setDocument(document);
 		rrhhUseCase.eliminateRrHh(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@DeleteMapping("/administrative-staff/{document}")
+	public ResponseEntity<Void> deleteAdministrative(@PathVariable long document) throws Exception {
+		User user = new User();
+		user.setDocument(document);
+		rrhhUseCase.eliminateAdministrativeStaff(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@DeleteMapping("/information-support/{document}")
+	public ResponseEntity<Void> deleteInformationSupport(@PathVariable long document) throws Exception {
+		User user = new User();
+		user.setDocument(document);
+		rrhhUseCase.eliminateInformationSupport(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@DeleteMapping("/nurse/{document}")
+	public ResponseEntity<Void> deleteNurse(@PathVariable long document) throws Exception {
+		User user = new User();
+		user.setDocument(document);
+		rrhhUseCase.eliminateNurse(user);
+		return ResponseEntity.ok().build();
+	}
+
+	@DeleteMapping("/doctor/{document}")
+	public ResponseEntity<Void> deleteDoctor(@PathVariable long document) throws Exception {
+		User user = new User();
+		user.setDocument(document);
+		rrhhUseCase.eliminateDoctor(user);
 		return ResponseEntity.ok().build();
 	}
 

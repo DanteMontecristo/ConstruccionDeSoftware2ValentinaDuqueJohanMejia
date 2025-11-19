@@ -7,4 +7,5 @@ public interface UserPort {
     public User findByUserName(User user) throws Exception;
     public User findByName(String name) throws Exception;
     public void save(User user) throws Exception;
+    public void deleteByDocument(long document) throws Exception;
 }

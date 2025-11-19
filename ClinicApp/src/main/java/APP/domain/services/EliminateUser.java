@@ -15,7 +15,7 @@ public class EliminateUser {
         if (userPort.findByDocument(user) == null) {
             throw new Exception("No existe una persona registrada con esa cedula");
         }
-        userPort.save(user);
+        userPort.deleteByDocument(user.getDocument());
     }
 
 }

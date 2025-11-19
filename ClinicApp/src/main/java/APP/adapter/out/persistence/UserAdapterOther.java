@@ -26,4 +26,9 @@ public class UserAdapterOther implements UserPort {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public void deleteByDocument(long document) throws Exception {
+		throw new UnsupportedOperationException();
+	}
+
 }

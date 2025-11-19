@@ -81,4 +81,16 @@ public class UserAdapter implements UserPort {
 		logger.info("✅ Usuario guardado exitosamente");
 	}
     
+	@Override
+	public void deleteByDocument(long document) throws Exception {
+		logger.info("🗑️ Eliminando usuario con documento={}", document);
+		UserEntity userEntity = userRepository.findByDocument(document);
+		if (userEntity == null) {
+			logger.warn("❌ Intento de eliminar usuario no existente: document={}", document);
+			throw new Exception("No existe una persona registrada con esa cedula");
+		}
+		userRepository.delete(userEntity);
+		logger.info("✅ Usuario eliminado: id={}, document={}", userEntity.getId(), userEntity.getDocument());
+	}
+    
 }
